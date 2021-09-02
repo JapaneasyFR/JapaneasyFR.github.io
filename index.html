@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Japaneasy | Home</title>
+<link rel="icon" type="image/png" sizes="16x16" href="img/Japaneasy.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/css1.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="css/css2.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+.fa-coffee{border-radius: 50%;width: 200px;}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="html/list_kana.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Kana - Lists</a>
+    <a href="html/quizz.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Kana - Quizzes</a>
+    <a href="html/kanji.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Kanji</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Ressources</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Kana - Lists</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Kana - Quizzes</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Kanji</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Ressources</a>
+  </div>
+</div>
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">JAPANEASY</h1>
+  <p class="w3-xlarge">Have you ever dreamt about learning Japanese?</p>
+  <a href="#id-first-grid"><button id="button" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button></a>
+</header>
+
+<!-- First Grid -->
+<div id="id-first-grid" class="w3-row-padding w3-padding-64 w3-container">
+    <!--<img id="first_grid_image" src="img/Japaneasy.png">-->
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>What is Japaneasy?</h1>  
+      <p class="w3-text-grey">ようこそ。Welcome to my educational website! Here, you will find different tools to learn Japanese vocabulary with fun. The current version fits very well with beginners, but it aims to be more and more complete. Please give me time :)
+<br>
+If it is you first step on your way to learn Japanese, you should start by learning Kana. You have the list of both hiragana and katakana, and you can then test your knowledge by doing quizzes.</p>
+    </div>
+    <!--<div style="float:right;"><img id="logo" src="img/textlogo.png"></div>-->
+
+    <div class="w3-third w3-center">
+      <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+    <!--<img id="photo_gawen" src="img/Photo%20cv%20(1).jpg">-->
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+    </div>
+
+    <div class="w3-twothird">
+      <h1>About me</h1>
+      <p class="w3-text-grey" id="second_p">My name is Gawen Monnot. I am a French student in engineering in Applied Mathematics and Computer Science, at CY Tech (France). I've always been loving discovering new cultures and new languages. I've been learning Japanese since I decided to live in Japan after my studies. I am not an expert in Japanese.  If you notice any mistake, please contact me and I will be happy to fix it. 
+    <br>
+          This project aims to developp my abilities in programming, in Japanese, but also to give me a lot of fun and maybe creating a community! If you appreciate my work, kind messages are strongly appreciated: feel free to contact me!</p>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <p>Gawen MONNOT | Japaneasy</p>
+    <input value="gawen.monnot@gmail.com" id="myInput" type="hidden">
+  <div class="w3-xlarge w3-padding-32">
+    <a href="https://github.com/GawenMonnot" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/gawenmonnot/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    <i class="fa fa-mail w3-hover-opacity" onclick="copy_email()"></i>  
+    <a href="https://cytech.cyu.fr/" target="_blank"><i class="fa fa-cy w3-hover-opacity"></i></a>
+ </div>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+//Copy email adress
+function copy_email() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  document.execCommand("copy");
+    alert("Copied the text: " + copyText.value);
+}
+</script>
+</body>
+</html>
