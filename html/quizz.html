@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Japaneasy | Quizz Kana</title>
+<link rel="icon" type="image/png" sizes="16x16" href="../img/Japaneasy.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/css1.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="../css/css2.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="../index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+    <a href="list_kana.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Kana - Lists</a>
+    <a href="quizz.html" class="w3-bar-item w3-button w3-padding-large w3-white">Kana - Quizzes</a>
+    <a href="kanji.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Kanji</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Ressources</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Kana - Lists</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Kana - Quizzes</a>
+    <a href="kanji.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Kanji</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Ressources</a>
+  </div>
+</div>
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">KANA - Quizzes</h1>
+  <p class="w3-xlarge">Test your knowledge!</p>
+  <div class="select">
+  <select name="slct" id="slct">
+    <option value="0" disabled>Select your quizz</option>
+    <option value="1">Hiragana</option>
+    <option value="2">Katakana</option>
+    <option value="3">Dakuten and Handakuten</option>
+    <option value="4">Combinations</option>
+  </select>
+</div>    
+  <button id="button" class="w3-button w3-black w3-padding-large w3-large w3-margin-top" href="#id-first-grid" onclick="display_kana()">Quizz</button>    
+</header> 
+<div id="display">
+    
+</div>
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">
+      <p>Gawen MONNOT | Japaneasy</p>
+    <input value="gawen.monnot@gmail.com" id="myInput" type="hidden">
+  <div class="w3-xlarge w3-padding-32">
+    <a href="https://github.com/GawenMonnot" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/gawenmonnot/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    <i class="fa fa-mail w3-hover-opacity" onclick="copy_email()"></i>
+    <a href="https://cytech.cyu.fr/" target="_blank"><i class="fa fa-cy w3-hover-opacity"></i></a>
+ </div>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function copy_email() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  document.execCommand("copy");
+    alert("Copied the text: " + copyText.value);
+}
+
+var list_hiragana=["あ","い","う","え","お","か","き","く","け","こ","さ","し","す","せ","そ","た","ち","つ","て","と","な","に","ぬ","ね","の","は","ひ","ふ","へ","ほ","ま","み","む","め","も","や","ゆ","よ","ら","り","る","れ","ろ","わ","を","ん"];
+var list_hiragana_2=["あ","い","う","え","お","か","き","く","け","こ","さ","し","す","せ","そ","た","ち","つ","て","と","な","に","ぬ","ね","の","は","ひ","ふ","へ","ほ","ま","み","む","め","も","や","ゆ","よ","ら","り","る","れ","ろ","わ","を","ん"];
+var list_katakana=["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","サ","シ","ス","セ","ソ","タ","チ","ツ","テ","ト","ナ","ニ","ヌ","ネ","ノ","ハ","ヒ","フ","ヘ","ホ","マ","ミ","ム","メ","モ","ヤ","ユ","ヨ","ラ","リ","ル","レ","ロ","ワ","ヲ","ン"];
+var list_katakana_2=["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","サ","シ","ス","セ","ソ","タ","チ","ツ","テ","ト","ナ","ニ","ヌ","ネ","ノ","ハ","ヒ","フ","ヘ","ホ","マ","ミ","ム","メ","モ","ヤ","ユ","ヨ","ラ","リ","ル","レ","ロ","ワ","ヲ","ン"];
+var list_pronunciation=["a","i","u","e","o","ka","ki","ku","ke","ko","sa","shi","su","se","so","ta","chi","tsu","te","to","na","ni","nu","ne","no","ha","hi","fu","he","ho","ma","mi","mu","me","mo","ya","yu","yo","ra","ri","ru","re","ro","wa","wo","n"];
+var list_daku=["が","ぎ","ぐ","げ","ご","ざ","じ","ず","ぜ","ぞ","だ","じ","づ","で","ど","ば","び","ぶ","べ","ぼ","ぱ","ぴ","ぷ","ぺ","ぽ","ガ","ギ","グ","ゲ","ゴ","ザ","ジ","ズ","ゼ","ゾ","ダ","ヂ","ヅ","デ","ド","バ","ビ","ブ","ベ","ボ","パ","ピ","プ","ペ","ポ"];
+var list_daku_2=["が","ぎ","ぐ","げ","ご","ざ","じ","ず","ぜ","ぞ","だ","じ","づ","で","ど","ば","び","ぶ","べ","ぼ","ぱ","ぴ","ぷ","ぺ","ぽ","ガ","ギ","グ","ゲ","ゴ","ザ","ジ","ズ","ゼ","ゾ","ダ","ヂ","ヅ","デ","ド","バ","ビ","ブ","ベ","ボ","パ","ピ","プ","ペ","ポ"];
+var list_pronunciation_daku=["ga","gi","gu","ge","go","za","ji","zu","ze","zo","da","ji","zu","de","do","ba","bi","bu","be","bo","pa","pi","pu","pe","po","ga","gi","gu","ge","go","za","ji","zu","ze","zo","da","ji","zu","de","do","ba","bi","bu","be","bo","pa","pi","pu","pe","po"];
+var list_combination= ["きゃ","きゅ","きょ","ぎゃ","ぎゅ","ぎょ","しゃ","しゅ","しょ","じゃ","じゅ","じょ","ちゃ","ちゅ","ちょ","にゃ","にゅ","にょ","ひゃ","ひゅ","ひょ","びゃ","びゅ","びょ","ぴゃ","ぴゅ","ぴょ","みゃ","みゅ","みょ","りゃ","りゅ","りょ","キャ","キュ","キョ","ギャ","ギュ","ギョ","シャ","シュ","ショ","ジャ","ジュ","ジョ","チャ","チュ","チョ","ニャ","ニュ","ニョ","ヒャ","ヒュ","ヒョ","ビャ","ビュ","ビョ","ピャ","ピュ","ピョ","ミャ","ミュ","ミョ","リャ","リュ","リョ"];
+var list_combination_2= ["きゃ","きゅ","きょ","ぎゃ","ぎゅ","ぎょ","しゃ","しゅ","しょ","じゃ","じゅ","じょ","ちゃ","ちゅ","ちょ","にゃ","にゅ","にょ","ひゃ","ひゅ","ひょ","びゃ","びゅ","びょ","ぴゃ","ぴゅ","ぴょ","みゃ","みゅ","みょ","りゃ","りゅ","りょ","キャ","キュ","キョ","ギャ","ギュ","ギョ","シャ","シュ","ショ","ジャ","ジュ","ジョ","チャ","チュ","チョ","ニャ","ニュ","ニョ","ヒャ","ヒュ","ヒョ","ビャ","ビュ","ビョ","ピャ","ピュ","ピョ","ミャ","ミュ","ミョ","リャ","リュ","リョ"];
+var list_pronunciation_combination=["kya","kyu","kyo","gya","gyu","gyo","sha","shu","sho","ja","ju","jo","cha","chu","cho","nya","nyu","nyo","hya","hyu","hyo","bya","byu","byo","pya","pyu","pyo","mya","myu","myo","rya","ryu","ryo","kya","kyu","kyo","gya","gyu","gyo","sha","shu","sho","ja","ju","jo","cha","chu","cho","nya","nyu","nyo","hya","hyu","hyo","bya","byu","byo","pya","pyu","pyo","mya","myu","myo","rya","ryu","ryo"];
+var x=0;
+var result=0;
+function display_kana() {
+    result=0;
+    x=0;
+    var cards="";
+    var category = document.getElementById("slct").value;
+    if(category=="1") {
+        fisherYatesShuffle(list_hiragana);
+        cards = cards +  '<div style="text-align:center"><h1>'+list_hiragana[x]+'</h1><input type="text" id="response" style="text-align:center"><br><button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" onclick="quizz_hiragana()">Answer</button><div><br><h1 style="text-align:center">Result: 0/0</h1></div>'; 
+        document.getElementById("display").innerHTML=cards;
+    }
+    if(category=="2") {
+        fisherYatesShuffle(list_katakana);
+        cards = cards +  '<div style="text-align:center"><h1>'+list_katakana[x]+'</h1><input type="text" id="response" style="text-align:center"><br><button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" onclick="quizz_katakana()">Answer</button><div><br><h1 style="text-align:center">Result: 0/0</h1></div>';
+        document.getElementById("display").innerHTML=cards;
+    }
+    if(category=="3") {
+        fisherYatesShuffle(list_daku);
+        cards = cards +  '<div style="text-align:center"><h1>'+list_daku[x]+'</h1><input type="text" id="response" style="text-align:center"><br><button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" onclick="quizz_daku()">Answer</button><div><br><h1 style="text-align:center">Result: 0/0</h1></div>';
+        document.getElementById("display").innerHTML=cards;
+    }
+    if (category=="4") {
+        fisherYatesShuffle(list_combination);
+        cards = cards +  '<div style="text-align:center"><h1>'+list_combination[x]+'</h1><input type="text" id="response" style="text-align:center"><br><button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" onclick="quizz_combination()">Answer</button><div><br><h1 style="text-align:center">Result: 0/0</h1></div>'; 
+        document.getElementById("display").innerHTML=cards;
+    }
+}
+
+function fisherYatesShuffle(arr){
+    for(var i =arr.length-1 ; i>0 ;i--){
+        var j = Math.floor( Math.random() * (i + 1) ); //random index
+        [arr[i],arr[j]]=[arr[j],arr[i]]; // swap
+    }
+}
+    
+function quizz_hiragana() {
+    var j=0;
+    var cards="";
+    for (let i=0;i<list_hiragana_2.length;i++) {
+        if (list_hiragana[x]==list_hiragana_2[i]) {
+            j=i;
+        }
+    }
+    if (document.getElementById("response").value==list_pronunciation[j]) {
+        result=result+1;
+        x=x+1;
+    }
+    else {
+        x=x+1;
+    }
+    if (x<list_hiragana.length) {
+        cards = cards +  '<div style="text-align:center"><h1>'+list_hiragana[x]+'</h1><input type="text" id="response" style="text-align:center"><br><button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" onclick="quizz_hiragana()">Answer</button><div><br><div><h1 style="text-align:center">Result: '+result+'/'+x+'</h1></div>'; 
+        document.getElementById("display").innerHTML=cards;
+    }
+    if (x==46) {
+        cards = cards +  '<h1 style="text-align:center">Result: '+result+'/'+x+'</h1>'; 
+        document.getElementById("display").innerHTML=cards;
+    }
+}
+
+function quizz_katakana() {
+    var j=0;
+    var cards="";
+    for (let i=0;i<list_katakana_2.length;i++) {
+        if (list_katakana[x]==list_katakana_2[i]) {
+            j=i;
+        }
+    }
+    if (document.getElementById("response").value==list_pronunciation[j]) {
+        result=result+1;
+        x=x+1;
+    }
+    else {
+        x=x+1;
+    }
+    if (x<list_katakana.length) {
+        cards = cards +  '<div style="text-align:center"><h1>'+list_katakana[x]+'</h1><input type="text" id="response" style="text-align:center"><br><button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" onclick="quizz_katakana()">Answer</button><div><br><div><h1 style="text-align:center">Result: '+result+'/'+x+'</h1></div>'; 
+        document.getElementById("display").innerHTML=cards;
+    }
+    if (x==list_katakana.length) {
+        cards = cards +  '<h1 style="text-align:center">Result: '+result+'/'+x+'</h1>'; 
+        document.getElementById("display").innerHTML=cards;
+    }
+}
+    
+function quizz_daku() {
+    var j=0;
+    var cards="";
+    for (let i=0;i<list_daku_2.length;i++) {
+        if (list_daku[x]==list_daku_2[i]) {
+            j=i;
+        }
+    }
+    if (document.getElementById("response").value==list_pronunciation_daku[j]) {
+        result=result+1;
+        x=x+1;
+    }
+    else {
+        x=x+1;
+    }
+    if (x<list_daku.length) {
+        cards = cards +  '<div style="text-align:center"><h1>'+list_daku[x]+'</h1><input type="text" id="response" style="text-align:center"><br><button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" onclick="quizz_daku()">Answer</button><div><br><div><h1 style="text-align:center">Result: '+result+'/'+x+'</h1></div>'; 
+        document.getElementById("display").innerHTML=cards;
+    }
+    if (x==list_daku.length) {
+        cards = cards +  '<h1 style="text-align:center">Result: '+result+'/'+x+'</h1>'; 
+        document.getElementById("display").innerHTML=cards;
+    }
+}
+
+function quizz_combination() {
+    var j=0;
+    var cards="";
+    for (let i=0;i<list_combination_2.length;i++) {
+        if (list_combination[x]==list_combination_2[i]) {
+            j=i;
+        }
+    }
+    if (document.getElementById("response").value==list_pronunciation_combination[j]) {
+        result=result+1;
+        x=x+1;
+    }
+    else {
+        x=x+1;
+    }
+    if (x<list_combination.length) {
+        cards = cards +  '<div style="text-align:center"><h1>'+list_combination[x]+'</h1><input type="text" id="response" style="text-align:center"><br><button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" onclick="quizz_combination()">Answer</button><div><br><div><h1 style="text-align:center">Result: '+result+'/'+x+'</h1></div>'; 
+        document.getElementById("display").innerHTML=cards;
+    }
+    if (x==list_combination.length) {
+        cards = cards +  '<h1 style="text-align:center">Result: '+result+'/'+x+'</h1>'; 
+        document.getElementById("display").innerHTML=cards;
+    }
+}
+</script>
+</body>
+<style>
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;    
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.select {
+  margin: 20px auto;    
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: .25em;
+}
+select {
+  flex: 1;
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #34495e;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}    
+
+footer {
+    background-color:#fafafa;
+}
+</style>
+</html>

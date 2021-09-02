@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Japaneasy | Kana</title>
+<link rel="icon" type="image/png" sizes="16x16" href="../img/Japaneasy.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/css1.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="../css/css2.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="../index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+    <a href="list_kana.html" class="w3-bar-item w3-button w3-padding-large w3-white">Kana - Lists</a>
+    <a href="quizz.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Kana - Quizzes</a>
+    <a href="kanji.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Kanji</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Ressources</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Kana - Lists</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Kana - Quizzes</a>
+    <a href="kanji.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Kanji</a>
+    <a href="ressources.html"0 class="w3-bar-item w3-button w3-padding-large">Ressources</a>
+  </div>
+</div>
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">RESSOURCES</h1>   
+  <button id="button" class="w3-button w3-black w3-padding-large w3-large w3-margin-top" href="#id-first-grid">Show</button>    
+</header> 
+
+
+
+</div>
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">
+      <p>Gawen MONNOT | Japaneasy</p>
+    <input value="gawen.monnot@gmail.com" id="myInput" type="hidden">
+  <div class="w3-xlarge w3-padding-32">
+    <a href="https://github.com/GawenMonnot" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/gawenmonnot/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    <i class="fa fa-mail w3-hover-opacity" onclick="copy_email()"></i>
+    <a href="https://cytech.cyu.fr/" target="_blank"><i class="fa fa-cy w3-hover-opacity"></i></a>
+ </div>
+</footer>
+
+</body>
+<style>
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;    
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.select {
+  margin: 20px auto;    
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: .25em;
+}
+select {
+  flex: 1;
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #34495e;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}    
+
+/*Cards*/
+.card-wrapper {
+  display: inline-block;
+  perspective: 1000px;
+}
+.card-wrapper .card {
+  position: relative;
+  cursor: pointer;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+  transform-style: preserve-3d;
+}
+.card-wrapper .card .front,
+.card-wrapper .card .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+}
+.card-wrapper .card .front {
+  z-index: 2;
+}
+.card-wrapper .card .back,
+.card-wrapper.flip-right .card .back {
+  transform: rotateY(180deg);
+}
+.card-wrapper:hover .card,
+.card-wrapper.flip-right:hover .card {
+  transform: rotateY(180deg);
+}
+/* DEMO */
+.card-wrapper,
+.card {
+  width: 250px;
+  height: 250px;
+  margin: 10px;
+}
+.card .front,
+.card .back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #FC545E;
+  border-radius: 4px;
+}
+.card .front {
+  color: #FC545E;
+  background: #FFFFFF;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.card .back {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  background: #FC545E;
+}
+    footer {
+        background-color:#fafafa;
+    }
+</style>
+</html>

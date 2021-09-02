@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Japaneasy | Kanji</title>
+<link rel="icon" type="image/png" sizes="16x16" href="../img/Japaneasy.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/css1.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="../css/css2.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="../index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+    <a href="list_kana.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Kana - Lists</a>
+    <a href="quizz.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Kana - Quizzes</a>
+    <a href="kanji.html" class="w3-bar-item w3-button w3-padding-large w3-white">Kanji</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Ressources</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Kana - Lists</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Kana - Quizzes</a>
+    <a href="kanji.html" class="w3-bar-item w3-button w3-padding-large w3-white">Kanji</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Ressources</a>
+  </div>
+</div>
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">KANJI</h1>
+  <p class="w3-xlarge">Learn your kanji!</p>
+  <div class="select">
+  <select name="slct" id="slct">
+    <option value="0">Presentation</option>
+    <option value="1">Hiragana</option>
+    <option value="2">Katakana</option>
+    <option value="3">Dakuten and Handakuten</option>
+    <option value="4">Combinations</option>
+  </select>
+</div>    
+  <button id="button" class="w3-button w3-black w3-padding-large w3-large w3-margin-top" href="#id-first-grid" onclick="display_kana()">Show</button>    
+</header> 
+<div id="display">
+<h1 style="text-align: center">What is kanji? (漢字)</h1>
+    <p class="w3-text-grey" style="text-align: center">Kanji is one of three Japanese writing systems along with hiragana and katakana. Both hiragana and katakana are phonetic, meaning that each character represents a single syllable, and that character will never be pronounced any other way. Kanji is a system of symbols that represent words or ideas, and that can have different meanings and pronunciations depending on their context. A kanji can be a word all by itself, like 木 (which means tree) or a kanji can be part of another word like 木造 (which means ‘wooden, or made of wood’).</p>
+<h2 style="text-align: center">Pronunciation (kun'yomi and on'yomi)</h2>
+<p class="w3-text-grey" style="text-align: center">There are multiple ways to pronounce almost every kanji. These are known as “readings.” There are readings that came from the original Chinese and then readings that came from the original Japanese. The Chinese readings are known as On’Yomi and the Japanese are Kun’Yomi.</p>
+<h2 style="text-align: center">Number</h2>
+<p class="w3-text-grey" style="text-align: center">There are more than 50 000 (!) kanji in Japanese. Don't panic! Only a few of them are really used. An average Japanese adult know between 2000 and 4000 kanji. However, if you want to understand around 95% of what you read, only 1000 kanji will get you there. 2136 joyo kanji gives you the government mandated minimum literacy and pushes you up over a 99% comprehension rate.</p>
+<h2 style="text-align: center">How did I make my kanji lists?</h2>
+<p class="w3-text-grey" style="text-align: center">My kanji lists are supposed to be sorted by difficulty (from lower to higher), following the JLPT lists. Every list is made of 50 kanji. To be efficient in your learning, you should try to pronounce them multiple times, while in the same time writing them. Don't forget to respect the stroke order! </p>
+<h2 style="text-align: center">Stroke order</h2>
+<p class="w3-text-grey" style="text-align: center"> Just like with hiragana and katakana, it exists different rules to write kanji. <br>
+    1. Top to bottom, and left to right<br>
+    2. Horizontal before vertical<br>
+    3. Character-spanning strokes last<br>
+    4. Diagonals right-to-left before diagonals left-to-right<br>
+    5. Long centre verticals before smaller "wings"<br>
+    6. Left vertical before across and down<br>
+    7. Enclosures before contents<br>
+    8. Dashes come last<br>
+    I recommand you to read the <a href="https://www.sljfaq.org/afaq/stroke-order.html">following article</a> that gives you different examples and exceptions to those rules.<br>
+    To be honest, you don't need to respect all the rules when writing your kanji, but you should at least follow the 1. and 2. ones if you want your kanji to be well written.
+    </p>
+</div>
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">
+      <p>Gawen MONNOT | Japaneasy</p>
+    <input value="gawen.monnot@gmail.com" id="myInput" type="hidden">
+  <div class="w3-xlarge w3-padding-32">
+    <a href="https://github.com/GawenMonnot" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/gawenmonnot/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    <i class="fa fa-mail w3-hover-opacity" onclick="copy_email()"></i>
+    <a href="https://cytech.cyu.fr/" target="_blank"><i class="fa fa-cy w3-hover-opacity"></i></a>
+ </div>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function copy_email() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  document.execCommand("copy");
+    alert("Copied the text: " + copyText.value);
+}
+
+var list_hiragana=["あ","い","う","え","お","か","き","く","け","こ","さ","し","す","せ","そ","た","ち","つ","て","と","な","に","ぬ","ね","の","は","ひ","ふ","へ","ほ","ま","み","む","め","も","や","ゆ","よ","ら","り","る","れ","ろ","わ","を","ん"];
+var list_katakana=["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","サ","シ","ス","セ","ソ","タ","チ","ツ","テ","ト","ナ","ニ","ヌ","ネ","ノ","ハ","ヒ","フ","ヘ","ホ","マ","ミ","ム","メ","モ","ヤ","ユ","ヨ","ラ","リ","ル","レ","ロ","ワ","ヲ","ン"];
+var list_pronunciation=["a","i","u","e","o","ka","ki","ku","ke","ko","sa","shi","su","se","so","ta","chi","tsu","te","to","na","ni","nu","ne","no","ha","hi","hu","he","ho","ma","mi","mu","me","mo","ya","yu","yo","ra","ri","ru","re","ro","wa","wo","n"];
+var list_daku=["が","ぎ","ぐ","げ","ご","ざ","じ","ず","ぜ","ぞ","だ","じ","づ","で","ど","ば","び","ぶ","べ","ぼ","ぱ","ぴ","ぷ","ぺ","ぽ","ガ","ギ","グ","ゲ","ゴ","ザ","ジ","ズ","ゼ","ゾ","ダ","ヂ","ヅ","デ","ド","バ","ビ","ブ","ベ","ボ","パ","ピ","プ","ペ","ポ"];
+var list_pronunciation_daku=["ga","gi","gu","ge","go","za","ji","zu","ze","zo","da","ji","zu","de","do","ba","bi","bu","be","bo","pa","pi","pu","pe","po"];
+var list_combination= ["きゃ","きゅ","きょ","ぎゃ","ぎゅ","ぎょ","しゃ","しゅ","しょ","じゃ","じゅ","じょ","ちゃ","ちゅ","ちょ","にゃ","にゅ","にょ","ひゃ","ひゅ","ひょ","びゃ","びゅ","びょ","ぴゃ","ぴゅ","ぴょ","みゃ","みゅ","みょ","りゃ","りゅ","りょ","キャ","キュ","キョ","ギャ","ギュ","ギョ","シャ","シュ","ショ","ジャ","ジュ","ジョ","チャ","チュ","チョ","ニャ","ニュ","ニョ","ヒャ","ヒュ","ヒョ","ビャ","ビュ","ビョ","ピャ","ピュ","ピョ","ミャ","ミュ","ミョ","リャ","リュ","リョ"];
+var list_pronunciation_combination=["kya","kyu","kyo","gya","gyu","gyo","sha","shu","sho","ja","ju","jo","cha","chu","cho","nya","nyu","nyo","hya","hyu","hyo","bya","byu","byo","pya","pyu","pyo","mya","myu","myo","rya","ryu","ryo","kya","kyu","kyo","gya","gyu","gyo","sha","shu","sho","ja","ju","jo","cha","chu","cho","nya","nyu","nyo","hya","hyu","hyo","bya","byu","byo","pya","pyu","pyo","mya","myu","myo","rya","ryu","ryo"];
+function display_kana() {
+    var cards="";
+    var category = document.getElementById("slct").value;
+    if (category=="0") {
+        document.getElementById("display").innerHTML='<p class="w3-text-grey" style="text-align: center">Note: Except "Hiragana" and "Katakana", you don'+'t need to know Japanese concepts'+' names.</p><h1 style="text-align: center">What are the kana?</h1><p class="w3-text-grey" style="text-align: center">In the Japanese writing system, Katakana and Hiragana independently represent all the sounds of the Japanese language.</p><h2 style="text-align: center">Hiragana</h2><p class="w3-text-grey" style="text-align: center">Hiragana are used to note the grammar: particles, prefixes and suffixes, the endings of verbs, nouns and adjectives.Some very common words are written in hiragana, even when there is a kanji. For example, for the pronoun “I”, we can find both 私 and わ た し (the pronunciation is the same, watashi).</p><h2 style="text-align: center">Katakana</h2><p class="w3-text-grey" style="text-align: center">The use of katakana is more restricted: they are mainly used to transcribe names of foreign origin. For example, ナイフ (naifu), from the English word "knife". Other uses of katakanas include onomatopoeia, animal names, and even the emphasis of a message.</p><h2 style="text-align: center">Dakuten (濁点) and Handakuten (半濁点)</h2><p class="w3-text-grey" style="text-align: center">Dakuten and Handakuten derived from kana, and were created to make new sounds. Not all kana have a Dakuten/Handakuten versions. </p><h2 style="text-align: center">Sokuon (double consonant)</h2><p class="w3-text-grey" style="text-align: center">Sokuon involves the use of a small “tsu, つ” to double a consonant in a word. Called gemination in phonetics, this results in a clipped sound, or slight pause, when pronouncing the word in Japanese. It’s not the easiest pronunciation point to get at first, but you will get the hang of it the more familiar you become with the language.<br>When writing in romaji, you use a double consonant, while in kana you will use the small “tsu” (っ for hiragana and ッ for katakana) in place of the repeated consonant.<br>Example : 日本 (にっぽん), "nippon" in romaji, "Japan". </p><h2 style="text-align: center">Chouon 長音 (long vowels)</h2><p class="w3-text-grey" style="text-align: center">These are words that have long sounds, resulting in a lengthened pronunciation in Japanese. <br>When writing, there are some rules that come into play: <br>Long vowels ending in a あ, i い, u う are written with an extra vowel of the same sound. For example, long vowels ending in あ add on an extra あ.<br>→ E.g. okaasan お母さん・おかあさん(mother).<br>Long e え sounds are followed by an extra い or え.<br>→ For example, eiga 映画 ・えいが(movie) or oneesan お姉さん・おねえさん (older sister). <br>Long vowels ending in o お are followed by an extra う.<br>→ For example, ohayou おはよう (good morning). <br>An exception to this is some words are written with a double お, such as in ooki 大き・おおき (big). <br>Sometimes you might see the extra vowel omitted and instead, the word will be written with a macron over the long vowel. For example: okāsan, ohayō. There is no real rule around that and much of it comes down to preference. <br>In katakana, the long vowel is represented by a dash instead. For example: koohii コーヒー (coffee), suupaa スーパー (supermarket).</p><h2 style="text-align: center">Combinations</h2><p class="w3-text-grey" style="text-align: center">It is possible to combine several kanas to form more complex syllables: mya, sha, cha, nya, hya… To do this, we take a kana ending in an i (ki, shi, chi…) and add the one of the following kanas: ya (や / ヤ), yu (ゆ / ユ), yo (よ / ヨ), this time again in a miniaturized version. We will therefore have for example: き + や = き ゃ (kya) or ミ + ヨ = ミ ョ (myo).<br>Katakanas allow you to make even more complex combinations to transcribe foreign sounds. For example: テ ィ (ti) or デ ィ (di).</p>'
+    }
+    if(category=="1") {
+        for (let i=0;i<list_hiragana.length;i++) {
+            if (list_pronunciation[i].includes("o")) {
+                cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_hiragana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div><br>';
+            }
+            else {
+                if (list_pronunciation[i]=="ya" || list_pronunciation[i]=="yu"){
+                    cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_hiragana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>';
+                }
+                else if (list_pronunciation[i]=="wa"){
+                    cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_hiragana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>';
+                }
+                else {
+                    cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_hiragana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div>';
+                }
+            }
+        }
+        document.getElementById("display").innerHTML=cards;
+    }
+    if(category=="2") {
+        for (let i=0;i<list_katakana.length;i++) {
+            if (list_pronunciation[i].includes("o")) {
+                cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_katakana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div><br>';
+            }
+            else {
+                if (list_pronunciation[i]=="ya" || list_pronunciation[i]=="yu"){
+                    cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_katakana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>';
+                }
+                else if (list_pronunciation[i]=="wa"){
+                    cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_katakana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>';
+                }
+                else {
+                    cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_katakana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div>';
+                }
+            }
+        }
+        document.getElementById("display").innerHTML=cards;
+    }
+    if(category=="3") {
+        for (let i=0;i<list_daku.length;i++) {
+            if (i<list_daku.length/2) {
+                if (list_pronunciation_daku[i].includes("o")) {
+                    cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_daku[i]+'</h1></div><div class="back"><h1>'+list_pronunciation_daku[i]+'</h1></div></div></div><br>';
+                }
+                else {
+                     cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_daku[i]+'</h1></div><div class="back"><h1>'+list_pronunciation_daku[i]+'</h1></div></div></div>';
+                }
+            }
+            else {
+                if (list_pronunciation_daku[i-list_daku.length/2].includes("o")) {
+                    cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_daku[i]+'</h1></div><div class="back"><h1>'+list_pronunciation_daku[i-list_daku.length/2]+'</h1></div></div></div><br>';
+                }
+                else {
+                     cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_daku[i]+'</h1></div><div class="back"><h1>'+list_pronunciation_daku[i-list_daku.length/2]+'</h1></div></div></div>';
+                }
+            }
+        }
+        document.getElementById("display").innerHTML=cards;
+    }
+    if (category=="4") {
+        for (let i=0;i<list_combination.length;i++) {
+            if (list_pronunciation_combination[i].includes("o")) {
+                cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_combination[i]+'</h1></div><div class="back"><h1>'+list_pronunciation_combination[i]+'</h1></div></div></div><br>';
+            }
+            else {
+                if (list_pronunciation_combination[i].includes("a") || list_pronunciation_combination[i].includes("u")) {
+                    cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_combination[i]+'</h1></div><div class="back"><h1>'+list_pronunciation_combination[i]+'</h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>';
+                }
+                else {
+                    cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_combination[i]+'</h1></div><div class="back"><h1>'+list_pronunciation_combination[i]+'</h1></div></div></div>';
+                }
+            
+        }
+                    }
+        document.getElementById("display").innerHTML=cards;
+    }
+}
+
+
+</script>
+</body>
+<style>
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;    
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.select {
+  margin: 20px auto;    
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: .25em;
+}
+select {
+  flex: 1;
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #34495e;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}    
+
+/*Cards*/
+.card-wrapper {
+  display: inline-block;
+  perspective: 1000px;
+}
+.card-wrapper .card {
+  position: relative;
+  cursor: pointer;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+  transform-style: preserve-3d;
+}
+.card-wrapper .card .front,
+.card-wrapper .card .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+}
+.card-wrapper .card .front {
+  z-index: 2;
+}
+.card-wrapper .card .back,
+.card-wrapper.flip-right .card .back {
+  transform: rotateY(180deg);
+}
+.card-wrapper:hover .card,
+.card-wrapper.flip-right:hover .card {
+  transform: rotateY(180deg);
+}
+/* DEMO */
+.card-wrapper,
+.card {
+  width: 250px;
+  height: 250px;
+  margin: 10px;
+}
+.card .front,
+.card .back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #FC545E;
+  border-radius: 4px;
+}
+.card .front {
+  color: #FC545E;
+  background: #FFFFFF;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.card .back {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  background: #FC545E;
+}
+    footer {
+        background-color:#fafafa;
+    }
+</style>
+</html>
