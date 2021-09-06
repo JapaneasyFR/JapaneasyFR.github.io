@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Japaneasy | Kana</title>
+<title>JapaneasyFR | Kana</title>
 <link rel="icon" type="image/png" sizes="16x16" href="../img/Japaneasy.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -86,7 +86,7 @@ In katakana, the long vowel is represented by a dash instead. For example: koohi
 </div>
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity">
-      <p>Gawen MONNOT | Japaneasy</p>
+      <p>Gawen MONNOT | JapaneasyFR</p>
     <input value="gawen.monnot@gmail.com" id="myInput" type="hidden">
   <div class="w3-xlarge w3-padding-32">
     <a href="https://github.com/GawenMonnot" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
@@ -111,9 +111,9 @@ function copy_email() {
   var copyText = document.getElementById("myInput");
   copyText.select();
   document.execCommand("copy");
-    alert("Copied the text: " + copyText.value);
+    alert("Please copy my email adress: " + copyText.value);
 }
-
+var j=0;
 var list_hiragana=["あ","い","う","え","お","か","き","く","け","こ","さ","し","す","せ","そ","た","ち","つ","て","と","な","に","ぬ","ね","の","は","ひ","ふ","へ","ほ","ま","み","む","め","も","や","ゆ","よ","ら","り","る","れ","ろ","わ","を","ん"];
 var list_katakana=["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","サ","シ","ス","セ","ソ","タ","チ","ツ","テ","ト","ナ","ニ","ヌ","ネ","ノ","ハ","ヒ","フ","ヘ","ホ","マ","ミ","ム","メ","モ","ヤ","ユ","ヨ","ラ","リ","ル","レ","ロ","ワ","ヲ","ン"];
 var list_pronunciation=["a","i","u","e","o","ka","ki","ku","ke","ko","sa","shi","su","se","so","ta","chi","tsu","te","to","na","ni","nu","ne","no","ha","hi","fu","he","ho","ma","mi","mu","me","mo","ya","yu","yo","ra","ri","ru","re","ro","wa","wo","n"];
@@ -130,17 +130,17 @@ function display_kana() {
     if(category=="1") {
         for (let i=0;i<list_hiragana.length;i++) {
             if (list_pronunciation[i].includes("o")) {
-                cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_hiragana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div><br><div id="audio" style="width:10px"><audio controls><source src="" type="audio/mpeg"></audio></div></div><br>';
+                cards = cards +  '<div class="card-wrapper flip-right" onclick="play1('+i+')"><div id="sound"></div><div class="card"><div class="front"><h1>'+list_hiragana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div><br>';
             }
             else {
                 if (list_pronunciation[i]=="ya" || list_pronunciation[i]=="yu"){
-                    cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_hiragana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div><br><audio controls><source src="" type="audio/mpeg"></audio></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>';
+                    cards = cards +  '<div class="card-wrapper flip-right" onclick="play1('+i+')"><div id="sound"></div><div class="card"><div class="front"><h1>'+list_hiragana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>';
                 }
                 else if (list_pronunciation[i]=="wa"){
-                    cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_hiragana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div><br><audio controls><source src="" type="audio/mpeg"></audio></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>';
+                    cards = cards +  '<div class="card-wrapper flip-right" onclick="play1('+i+')"><div id="sound"></div><div class="card"><div class="front"><h1>'+list_hiragana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>';
                 }
                 else {
-                    cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_hiragana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div><br><audio controls><source src="" type="audio/mpeg"></audio></div>';
+                    cards = cards +  '<div class="card-wrapper flip-right" onclick="play1('+i+')"><div id="sound"></div><div class="card"><div class="front"><h1>'+list_hiragana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div>';
                 }
             }
         }
@@ -149,17 +149,17 @@ function display_kana() {
     if(category=="2") {
         for (let i=0;i<list_katakana.length;i++) {
             if (list_pronunciation[i].includes("o")) {
-                cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_katakana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div><br>';
+                cards = cards +  '<div class="card-wrapper flip-right" onclick="play1('+i+')"><div id="sound"></div><div class="card"><div class="front"><h1>'+list_katakana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div><br>';
             }
             else {
                 if (list_pronunciation[i]=="ya" || list_pronunciation[i]=="yu"){
-                    cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_katakana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>';
+                    cards = cards +  '<div class="card-wrapper flip-right" onclick="play1('+i+')"><div id="sound"></div><div class="card"><div class="front"><h1>'+list_katakana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>';
                 }
                 else if (list_pronunciation[i]=="wa"){
-                    cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_katakana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>';
+                    cards = cards +  '<div class="card-wrapper flip-right" onclick="play1('+i+')"><div id="sound"></div><div class="card"><div class="front"><h1>'+list_katakana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>'+'<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1></h1></div><div class="back"><h1></h1></div></div></div>';
                 }
                 else {
-                    cards = cards +  '<div class="card-wrapper flip-right"><div class="card"><div class="front"><h1>'+list_katakana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div>';
+                    cards = cards +  '<div class="card-wrapper flip-right" onclick="play1('+i+')"><div id="sound"></div><div class="card"><div class="front"><h1>'+list_katakana[i]+'</h1></div><div class="back"><h1>'+list_pronunciation[i]+'</h1></div></div></div>';
                 }
             }
         }
@@ -216,8 +216,17 @@ function display_kana() {
         document.getElementById("display").innerHTML=cards;
     }
 }
-
-
+function play1(j) {
+                  
+                /* Audio link for notification */
+				var t=j;
+                var path = "https://0.tqn.com/z/g/japanese/library/media/audio/"+list_pronunciation[t]+".mp3";
+				/*alert(path);*/
+                var mp3 = '<source src="'+path+'" type="audio/mpeg">';
+                document.getElementById("sound").innerHTML = 
+                '<audio autoplay="autoplay">' + mp3 + "</audio>";
+            }
+	
 </script>
 </body>
 <style>
