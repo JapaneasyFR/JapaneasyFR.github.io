@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Japaneasy | Quizz Kana</title>
+<title>JapaneasyFR | Quizz Kana</title>
 <link rel="icon" type="image/png" sizes="16x16" href="../img/Japaneasy.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +55,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </div>
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity">
-      <p>Gawen MONNOT | Japaneasy</p>
+      <p>Gawen MONNOT | JapaneasyFR</p>
     <input value="gawen.monnot@gmail.com" id="myInput" type="hidden">
   <div class="w3-xlarge w3-padding-32">
     <a href="https://github.com/GawenMonnot" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
@@ -138,7 +138,7 @@ function quizz_hiragana() {
             j=i;
         }
     }
-    if (document.getElementById("response").value==list_pronunciation[j]) {
+    if (document.getElementById("response").value.toLowerCase()==list_pronunciation[j]) {
         result=result+1;
         x=x+1;
     }
@@ -163,7 +163,7 @@ function quizz_katakana() {
             j=i;
         }
     }
-    if (document.getElementById("response").value==list_pronunciation[j]) {
+    if (document.getElementById("response").value.toLowerCase()==list_pronunciation[j]) {
         result=result+1;
         x=x+1;
     }
@@ -188,7 +188,7 @@ function quizz_daku() {
             j=i;
         }
     }
-    if (document.getElementById("response").value==list_pronunciation_daku[j]) {
+    if (document.getElementById("response").value.toLowerCase()==list_pronunciation_daku[j]) {
         result=result+1;
         x=x+1;
     }
@@ -213,7 +213,7 @@ function quizz_combination() {
             j=i;
         }
     }
-    if (document.getElementById("response").value==list_pronunciation_combination[j]) {
+    if (document.getElementById("response").value.toLowerCase()==list_pronunciation_combination[j]) {
         result=result+1;
         x=x+1;
     }
